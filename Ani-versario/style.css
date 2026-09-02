@@ -1,0 +1,758 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at top, #30205f, #120d24 70%);
+
+    color: white;
+}
+
+
+/* =========================
+   TELAS
+========================= */
+
+.tela {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+.tela.ativa {
+    display: flex;
+
+    animation: aparecer 0.7s ease;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.caixa-inicial {
+
+    width: min(90%, 500px);
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.4);
+
+}
+
+
+.emoji-grande {
+
+    font-size: 90px;
+
+    animation:
+        flutuar 2s ease-in-out infinite;
+
+}
+
+
+@keyframes flutuar {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+h1 {
+
+    margin: 20px 0;
+
+    font-size: clamp(28px, 6vw, 45px);
+
+}
+
+
+p {
+
+    color: #ddd;
+
+    line-height: 1.6;
+
+}
+
+
+input {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 18px;
+
+    text-align: center;
+
+}
+
+
+button {
+
+    margin-top: 20px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ff4fa3;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(255,79,163,0.6);
+
+}
+
+
+.erro {
+
+    margin-top: 10px;
+
+    color: #ff7b7b;
+
+}
+
+
+/* =========================
+   PRESENTE
+========================= */
+
+.conteudo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.texto-topo {
+
+    font-size: 18px;
+
+}
+
+
+.contador {
+
+    margin: 15px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+#mensagemClique {
+
+    margin-top: 25px;
+
+    animation:
+        pulsar 1.5s infinite;
+
+}
+
+
+@keyframes pulsar {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   PRESENTE 2D
+========================= */
+
+.presente {
+
+    position: relative;
+
+    width: 220px;
+
+    height: 200px;
+
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.presente:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.caixa {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 200px;
+
+    height: 140px;
+
+    left: 10px;
+
+    background: #e6386d;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 30px rgba(0,0,0,0.4);
+
+}
+
+
+.tampa {
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 45px;
+
+    left: 0;
+
+    top: 25px;
+
+    background: #ff4f7b;
+
+    border-radius: 8px;
+
+    z-index: 5;
+
+    transition: 0.4s;
+
+}
+
+
+.fita-vertical {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 100%;
+
+    left: 82px;
+
+    background: #ffd34e;
+
+}
+
+
+.fita-horizontal {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 30px;
+
+    top: 50px;
+
+    background: #ffd34e;
+
+}
+
+
+.laco {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 78px;
+
+    width: 70px;
+
+    height: 50px;
+
+    z-index: 10;
+
+}
+
+
+.laco span {
+
+    position: absolute;
+
+    width: 40px;
+
+    height: 30px;
+
+    background: #ffd34e;
+
+    border-radius: 50%;
+
+}
+
+
+.laco span:first-child {
+
+    left: 0;
+
+    transform: rotate(-30deg);
+
+}
+
+
+.laco span:last-child {
+
+    right: 0;
+
+    transform: rotate(30deg);
+
+}
+
+
+.presente.tremendo {
+
+    animation:
+        tremer 0.3s;
+
+}
+
+
+@keyframes tremer {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+
+.presente.aberto .tampa {
+
+    transform:
+        translateY(-100px)
+        rotate(-10deg);
+
+    opacity: 0;
+
+}
+
+
+.presente.aberto {
+
+    animation:
+        explodir 0.7s;
+
+}
+
+
+@keyframes explodir {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3) rotate(5deg);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta {
+
+    margin-top: 30px;
+
+    cursor: pointer;
+
+}
+
+
+.envelope {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 190px;
+
+    background: #f5e4c8;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.5);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+
+}
+
+
+.envelope:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+.aba {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 140px solid transparent;
+
+    border-right: 140px solid transparent;
+
+    border-top: 100px solid #dfc9a8;
+
+    z-index: 3;
+
+    transition: 0.6s;
+
+}
+
+
+.papel {
+
+    position: absolute;
+
+    background: white;
+
+    color: #e6386d;
+
+    font-size: 50px;
+
+    width: 150px;
+
+    height: 120px;
+
+    left: 65px;
+
+    top: 50px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2;
+
+}
+
+
+.carta.aberta .aba {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.carta.aberta .papel {
+
+    transform:
+        translateY(-100px);
+
+    transition: 0.7s;
+
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+
+    width: min(90%, 650px);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.bolo {
+
+    font-size: 100px;
+
+    animation:
+        flutuar 2s infinite;
+
+}
+
+
+.final h1 {
+
+    color: #ffd34e;
+
+    text-shadow:
+        0 0 20px rgba(255,211,78,0.5);
+
+}
+
+
+#nomeFinal {
+
+    font-size: 35px;
+
+    color: #ff7eb5;
+
+}
+
+
+.linha {
+
+    width: 80%;
+
+    height: 2px;
+
+    background: rgba(255,255,255,0.3);
+
+    margin: 20px auto;
+
+}
+
+
+#mensagemFinal {
+
+    font-size: 20px;
+
+}
+
+
+.assinatura {
+
+    margin-top: 10px;
+
+}
+
+
+#btnReiniciar {
+
+    background: #6c5ce7;
+
+}
+
+
+/* =========================
+   CONFETES
+========================= */
+
+#confetes {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.confete {
+
+    position: absolute;
+
+    top: -20px;
+
+    width: 10px;
+
+    height: 20px;
+
+    animation:
+        cair 4s linear forwards;
+
+}
+
+
+@keyframes cair {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .presente {
+
+        transform: scale(0.85);
+
+    }
+
+    .presente:hover {
+
+        transform: scale(0.9);
+
+    }
+
+    .envelope {
+
+        width: 250px;
+
+        height: 170px;
+
+    }
+
+    .aba {
+
+        border-left-width: 125px;
+        border-right-width: 125px;
+
+    }
+
+    .papel {
+
+        left: 50px;
+
+    }
+
+}

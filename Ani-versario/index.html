@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma Surpresa Para Você 🎁</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA INICIAL
+    ========================== -->
+
+    <section id="telaInicial" class="tela ativa">
+
+        <div class="caixa-inicial">
+
+            <div class="emoji-grande">🎁</div>
+
+            <h1>Tenho uma surpresa para você!</h1>
+
+            <p>
+                Mas primeiro preciso saber...
+                <br>
+                <strong>Qual é o seu nome?</strong>
+            </p>
+
+            <input
+                type="text"
+                id="nomeInput"
+                placeholder="Digite seu nome..."
+                maxlength="30"
+            >
+
+            <button id="btnComecar">
+                CONTINUAR ✨
+            </button>
+
+            <p id="erroNome" class="erro"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TELA DO PRESENTE
+    ========================== -->
+
+    <section id="telaPresente" class="tela">
+
+        <div class="conteudo">
+
+            <p class="texto-topo">
+                Então você é <strong id="nomePessoa"></strong>...
+            </p>
+
+            <h1>Seu presente chegou! 🎁</h1>
+
+            <p id="instrucao">
+                Clique no presente para abrir.
+            </p>
+
+            <div class="contador">
+                <span id="contador">0</span>/5
+            </div>
+
+
+            <!-- PRESENTE -->
+
+            <div id="presente" class="presente">
+
+                <div class="tampa"></div>
+
+                <div class="caixa">
+
+                    <div class="fita-vertical"></div>
+                    <div class="fita-horizontal"></div>
+
+                </div>
+
+                <div class="laco">
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <p id="mensagemClique">
+                👆 Clique!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TELA DA CARTA
+    ========================== -->
+
+    <section id="telaCarta" class="tela">
+
+        <div class="conteudo">
+
+            <h1>O presente abriu! 🎉</h1>
+
+            <p>
+                Mas parece que ainda tem alguma coisa aqui...
+            </p>
+
+            <div id="carta" class="carta">
+
+                <div class="envelope">
+
+                    <div class="papel">
+                        💌
+                    </div>
+
+                    <div class="aba"></div>
+
+                </div>
+
+            </div>
+
+            <p id="cliqueCarta">
+                Clique na carta 💌
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TELA FINAL
+    ========================== -->
+
+    <section id="telaFinal" class="tela">
+
+        <div class="conteudo final">
+
+            <div class="bolo">
+                🎂
+            </div>
+
+            <h1>
+                FELIZ ANIVERSÁRIO!
+            </h1>
+
+            <h2 id="nomeFinal"></h2>
+
+            <div class="linha"></div>
+
+            <p id="mensagemFinal">
+                Fala ai filho da mãe.
+                Usei todos meus neoronios para fazer isso para vc.
+                Então parabéns seu inutiu, amo vc gatinho.
+            </p>
+
+            <p class="assinatura">
+                Com carinho e um beijo na teta esquenda. ❤️
+            </p>
+
+            <p class="assinatura">
+                De Renato para vc
+            </p>
+
+            <button id="btnReiniciar">
+                🔄 Ver novamente
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONFETES -->
+
+    <div id="confetes"></div>
+
+
+    <!-- MÚSICA OPCIONAL -->
+
+    <audio id="musica" loop>
+        <source src="musica/aniversario.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
